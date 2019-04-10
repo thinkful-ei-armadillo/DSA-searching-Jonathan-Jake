@@ -4,9 +4,9 @@ import './App.css';
 class App extends Component {
   state = {
     linearCounter: null,
-    linearMessage: 'hello',
+    linearMessage: '',
     binaryCounter: null,
-    binaryMessage: 'hello',
+    binaryMessage: '',
     search: null,
     sortedArr: [
       1, 2, 3, 5, 6, 6, 6, 7, 7, 
@@ -22,7 +22,8 @@ class App extends Component {
       69, 69, 70, 70, 72, 72, 73, 
       73, 76, 78, 78, 80, 81, 82, 
       83, 84, 85, 87, 87, 88, 88, 
-      89, 90, 91, 93, 97, 98, 98]
+      89, 90, 91, 93, 97, 98, 98
+    ]
   }
 
 linearSearch = (array, value) => {
@@ -80,13 +81,13 @@ binarySearch = (array, value, start, end, counter=1) => {
 
 searchVal=(e)=>{
   this.setState({
-    search: e.target.value})
-
+    search: e.target.value
+  })
 }
 
 
   render() {
-    console.log(this.state.binaryMessage);
+    const { binaryMessage, linearMessage } = this.state;
     
     return (
       <div className="App">
@@ -95,6 +96,9 @@ searchVal=(e)=>{
           <button type='button' onClick = {() => this.linearSearch(this.props.data, parseInt(this.state.search))}>Linear Search</button>
           <button type='button' onClick = {() => this.binarySearch(this.state.sortedArr, parseInt(this.state.search))}>Binary Search</button>
         </form>
+        <div>
+          {binaryMessage} {linearMessage}
+        </div>
       </div>
     );
   }
