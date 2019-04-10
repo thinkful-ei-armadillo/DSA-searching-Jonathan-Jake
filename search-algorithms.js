@@ -113,7 +113,7 @@ function commanders(bst, result = []) {
       queue.enqueue(node.right);
     }
   }
-  result.forEach(p => console.log(p));
+  result.forEach(officers => console.log(officers));
 }
 
 
@@ -147,3 +147,16 @@ nextCommandingOfficer();
 // 1.2) 14, 19, 27, 89, 79, 91, 90, 15, 25, 35
 
 // 2) 8, 6, 5, 7, 10, 9, 11
+
+function profit(arr){
+  let max = 0;
+  for(let i =0; i<arr.length; i++){
+    if(arr[i+1] - arr[i] > max){
+      max = arr[i+1] - arr[i];
+    }
+  }
+  console.log(max);
+  return max;
+  
+}
+profit([128, 97, 121, 123, 98, 97, 105]);
