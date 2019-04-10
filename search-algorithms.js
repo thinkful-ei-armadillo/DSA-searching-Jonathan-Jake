@@ -1,3 +1,4 @@
+
 const BinarySearchTree = require('./binary-search-tree');
 const Queue = require('./queue');
 
@@ -22,3 +23,8 @@ function binarySearch(arr, value, start = 0, end = arr.length - 1) {
   }
 }
 
+
+// 1. How many searches?
+
+// 1a. 11, 5, 6, 8
+// 1b. 11, 15, 17
